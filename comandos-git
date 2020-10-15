@@ -1,7 +1,10 @@
-git ini // cria o repositório
+git init // cria o repositório
 git config user.name "nomeUsuario" // define o usuário
 git config user.mail "emailUsuario" // define o email do usuário
 git remote add origin http://... // aponta o repositório remoto
 git add . // adiciona todas as modificações
 git commit -m "mensagem" // commita(salva) as modificações feitas
 git push origin master // envia as modificaçõesao repositório remoto
+
+git status
+git clone "url do repositório". // traz o repositório para o local desejado.
