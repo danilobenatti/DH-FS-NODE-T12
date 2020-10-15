@@ -1,8 +1,21 @@
-git init // cria o repositório
+git init // cria o repositório local na pasta onde estão os arquivos.
 git config user.name "nomeUsuario" // define o usuário
-git config user.mail "emailUsuario" // define o email do usuário
-git remote add origin http://... // aponta o repositório remoto
-git add . // adiciona todas as modificações
+git config user.email "emailUsuario" // define o email do usuário
+
+// define de forma global usuário e email para demais projetos
+// contidos no mesmo local (DESKTOP).
+git config --global user.name "nomeUsuario"
+git config --global user.email "emailUsuario"
+
+git remote add origin https://... // aponta para o repositório remoto.
+git remote add origin https://github.com/danilobenatti/DH-FS-NODE-T12.git
+git remote -v // verifica se o apontamento para o repositório está correto.
+// origin  https://github.com/danilobenatti/DH-FS-NODE-T12.git (fetch) -> de onde virá os arquivos.
+// origin  https://github.com/danilobenatti/DH-FS-NODE-T12.git (push) -> para onde enviar os arquivos.
+
+git status // status em relação ao repositório
+git add nomearquivo.js
+git add . // adiciona os arquivos ou as modificações
 git commit -m "mensagem" // commita(salva) as modificações feitas
 git push origin master // envia as modificaçõesao repositório remoto
 
