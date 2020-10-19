@@ -20,4 +20,41 @@ git commit -m "mensagem" // commita(salva) as modificações feitas
 git push origin master // envia as modificaçõesao repositório remoto
 
 git status
-git clone "url do repositório". // traz o repositório para o local desejado.
+git clone https://github.com/danilobenatti/***. // clona o projeto do repositório para 
+// o local desejado, quando for pela primeira vez.
+// o comando clone é executado apenas uma vez. Apenas quando se que baixar os arquivos no github e
+// eles não estão presentes no computador local
+// se os arquivos estão presentes e a intenção for atualizar, ai o comando é outro.
+git pull origin master // irá realizar o download dos arquivos e atualizar os arquivos locais
+// apenas dos que foram adicionados ou modificados.
+// basicamente o "git pull" trás do repositório os arquivos atualizados.
+
+
+// ------------------------------
+git status
+// verificar o log para saber se exite arquivos novos.
+git add .
+// adiciona todos os arquivos para serem adicionados/atualizados.
+git commit -m "Mensagem de informação"
+// comitar/"salva" os arquivos
+git push origin master
+// efetiva/"oficializa" a operação de enviar os arquivos.
+
+// ------------------------------
+// Criando Branches
+// Para uma branch de nome "bugfix45"
+git branch bugfix45
+// Para começar utilizar a branch "bugfix45"
+git checkout bugfix45
+// Para criar uma branch de nome "bugfix45" e passar a utilizá-la
+// com um só comando.
+git checkout -b bugfix45
+// Para listar todas as branches de um repositório "local" execute
+git branch
+// Para listar todas as branches "locais" e "remotas" execute
+git branches -a
+
+// ------------------------------
+// Podemos listar o histórico de commit's
+// Exibe todos os commit's
+git log
