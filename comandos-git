@@ -1,3 +1,12 @@
+// SVN - Controle centralizado. Surgiu no ano de 2000.
+// Git - Controle distribuido. Surgiu no final de 2005.
+
+// Git - Status dos arquivos no "Working Directory"
+// Untracked files: significa que o(s) arquivo(s) não está(ão) rastreado(s)
+// Git - Status dos arquivos no "Staging Area"
+// Staged: significa que o(s) arquivo(s) está(ão) rastreado(s).
+// Git - Status dos arquivos no "Committed"
+
 git init // cria o repositório local na pasta onde estão os arquivos.
 git config user.name "nomeUsuario" // define o usuário
 git config user.email "emailUsuario" // define o email do usuário
@@ -14,6 +23,7 @@ git remote -v // verifica se o apontamento para o repositório está correto.
 // origin  https://github.com/danilobenatti/DH-FS-NODE-T12.git (push) -> para onde enviar os arquivos.
 
 git status // status em relação ao repositório
+git diff // exibe um log de status no console.
 git add nomearquivo.js
 git add . // adiciona os arquivos ou as modificações
 git commit -m "mensagem" // commita(salva) as modificações feitas
@@ -33,28 +43,53 @@ git pull origin master // irá realizar o download dos arquivos e atualizar os a
 // ------------------------------
 git status
 // verificar o log para saber se exite arquivos novos.
+// o comando "git add" muda o status do arquivo de untracked para staged
 git add .
+// ou
+git add --all
+// ou
+git add -A
 // adiciona todos os arquivos para serem adicionados/atualizados.
 git commit -m "Mensagem de informação"
 // comitar/"salva" os arquivos
+git commit -a -m "Mensagem Info"
+// realiza o add all e comitar/"salva" com a mensagem
+// caso entre no terminal para inserir comentários, para sair use :wq
 git push origin master
-// efetiva/"oficializa" a operação de enviar os arquivos.
+// efetiva/"oficializa" a operação de enviar os arquivos
+// para o github
 
 // ------------------------------
-// Criando Branches
-// Para uma branch de nome "bugfix45"
+// Criando Branches/Ramificações
 git branch bugfix45
-// Para começar utilizar a branch "bugfix45"
+// Cria uma nova branch de nome "bugfix45"
 git checkout bugfix45
+// Trocando para a branch "bugfix45", Neste caso, o ponteiro principal 
+// HEAD esta apontando para a branch chamada
+git checkout -b bugfix45
 // Para criar uma branch de nome "bugfix45" e passar a utilizá-la
 // com um só comando.
-git checkout -b bugfix45
-// Para listar todas as branches de um repositório "local" execute
 git branch
-// Para listar todas as branches "locais" e "remotas" execute
+// Para listar todas as branches de um repositório "local" execute
 git branches -a
+// Para listar todas as branches "locais" e "remotas" execute
 
 // ------------------------------
 // Podemos listar o histórico de commit's
-// Exibe todos os commit's
 git log
+// Exibe todos os commit's, utilize a tecla "q" ou "z" para exit git log
+git checkout bugfix45
+// Podemos utilizar o comando git checkout para mover a HEAD do
+// repositório para qualquer branch.
+git checkout c6d97a
+// Podemos utilizar o comando git checkout para mover a HEAD para
+// qualquer commit. Basta saber os 6 primeiros caracteres da hash do commit.
+git checkout --<nomeDoArquivo>
+// Para desfazer as mudanças que não foram adicionadas ao stage
+git checkout HEAD --<nomeDoArquivo>
+// Para desfazer as mudanças dos arquivos no stage, mas não comitadas
+
+// ------------------------------
+git revert
+// cria um novo commit revertendo as alterações feitas até o commit especificado
+git revert --hard <HASH-DE-COMMIT-ANTERIOR>
