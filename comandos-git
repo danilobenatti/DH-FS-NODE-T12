@@ -24,6 +24,8 @@ git remote -v // verifica se o apontamento para o repositório está correto.
 
 git status // status em relação ao repositório
 git diff // exibe um log de status no console.
+git diff --cached
+git diff --staged
 git add nomearquivo.js
 git add . // adiciona os arquivos ou as modificações
 git commit -m "mensagem" // commita(salva) as modificações feitas
@@ -78,6 +80,8 @@ git branches -a
 // Podemos listar o histórico de commit's
 git log
 // Exibe todos os commit's, utilize a tecla "q" ou "z" para exit git log
+git log --oneline
+// Exibe o log com formataçao reduzida.
 git checkout bugfix45
 // Podemos utilizar o comando git checkout para mover a HEAD do
 // repositório para qualquer branch.
@@ -93,3 +97,8 @@ git checkout HEAD --<nomeDoArquivo>
 git revert
 // cria um novo commit revertendo as alterações feitas até o commit especificado
 git revert --hard <HASH-DE-COMMIT-ANTERIOR>
+// move o apontador da branch para um outro commit
+git merge <OUTRA-BRANCH>
+// tenta criar um novo commit unindo a branch atual a uma outra branch
+git rebase <OUTRA-BRANCH>
+// emenda o branch atual sobre a outra branch
