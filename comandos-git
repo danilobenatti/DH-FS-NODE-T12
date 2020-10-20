@@ -51,6 +51,8 @@ git add .
 git add --all
 // ou
 git add -A
+// ou
+git add *
 // adiciona todos os arquivos para serem adicionados/atualizados.
 git commit -m "Mensagem de informação"
 // comitar/"salva" os arquivos
