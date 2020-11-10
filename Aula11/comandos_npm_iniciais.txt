@@ -1,0 +1,5 @@
+/**
+ * npm init -y
+ * npm install express --save
+ * npm install nodemon -g // caso o nodemon ainda não esteja instalado
+ */
