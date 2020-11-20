@@ -1,0 +1,92 @@
+/* definindo altura da pagina para conseguir aplicar altura no
+elemento filho header */
+html, body {
+    height: 100%;
+  }
+/* HEADER */
+header {
+    display: inline-block;
+    background-color: #ffb90f;
+    height: 15%;
+    width: 100%;
+    margin-top: 70px;
+    border: 2px solid #ff830f;
+    position: relative;
+}
+
+header form {
+    margin-left: 400px;
+}
+
+header nav img {
+    position: absolute;
+    width: 200px;
+    margin-top: -65px;
+}
+
+header nav ul {
+    list-style: none;
+    margin-left: 160px;
+}
+
+header nav ul li {
+    display: inline-block;
+    padding: 15px 0 0 50px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    font-size: 20px;
+  }
+  
+  header nav, header form {
+    display: inline-block;
+  }
+  
+  header form { 
+    margin-left: 400px;
+  }
+
+  /*container*/
+.container {
+    width: 960px;
+    height: 650px;
+    margin: 40px auto;
+}
+
+.product-image {
+    background-image: url("../img/product-1.jpg");
+}
+
+.products {
+    display: inline-block;
+    background-position: center;
+    background-size: cover;
+    margin: 0 15px 15px 0;
+    width: 300px;
+    height: 300px;
+}
+
+.img-label {
+    width: 70px;
+    margin: 5px 0 0 226px;
+}
+
+.name-product {
+    height: 40px;
+    color: white;
+    background: #101010;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 10px;
+}
+
+.see-more {
+    background-color: rgb(255, 81, 0);
+    box-sizing: border-box;
+    border-left: solid 5px rgb(255, 81, 0);
+    font-size: solid 20px;
+}
