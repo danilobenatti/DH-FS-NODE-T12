@@ -1,0 +1,33 @@
+.header {
+    background-color: aquamarine;
+}
+
+.section-one {
+    background-color: violet;
+}
+
+.section-two {
+    background-color: orange;
+}
+
+.section-three {
+    background-color: sandybrown;
+}
+
+.footer {
+    background-color: aquamarine;
+}
+
+.header, .section-one, .section-two, .section-three, .footer {
+    height: 150px;
+    margin-bottom: 15px;
+}
+
+/* @media - para mudar as cores com a mudança de tamanho de tela*/
+@media (max-width: 600px) {
+    .header {
+        background-color: blueviolet;
+    }
+}
+
+/* Estudar sobre SASS CSS videos do youtube */
