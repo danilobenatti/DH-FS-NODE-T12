@@ -1,0 +1,26 @@
+<%- include('./partials/header') %>
+    <main>
+        <h1>Estudantes</h1>
+        <hr>
+        <%
+            let estudantes = [
+            {nome: 'Hendy', curso: 'FS Blend', email: 'hendy@mail.com'},
+            {nome: 'Vinicius', curso: 'Mobile Android', email: 'vinicius@mail.com'},
+            {nome: 'Thomaz', curso: 'Mobile iOS', email: 'thomaz@mail.com'}
+            ];
+        %>
+        <ul>
+            <% for(let estudante of estudantes) { %>
+            <li>Olá! Sou <%= estudante.nome %> e estou no curso de <%= estudante.curso %>. Meu email é <%= estudante.email %></li>
+            <% } %>
+        </ul>
+    
+        <% if(4 < 5) { %>
+            <h2>O 4 é menor que 5!</h2>
+        <% } %>
+    
+        <% for(let i = 0; i < 5; i++) { %>
+            <p>Loop for: <%= (i + 1) %></p>
+        <% } %>
+    </main>
+<%- include('./partials/footer') %>
