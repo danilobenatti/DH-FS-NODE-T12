@@ -1,18 +1,18 @@
 module.exports = [
     {
         nome: 'Motorola Moto E6 Plus',
-        preco: 14999
+        preco: 949
     },
     {
         nome: 'Motorola Moto G7',
-        preco: 19999
+        preco: 800
     },
     {
-        nome: 'Alcatel 5033A',
-        preco: 6999
+        nome: 'Samsung Galaxy A10',
+        preco: 699
     },
     {
         nome: 'Samsung Galaxy A50',
-        preco: 33499
+        preco: 1899
     }
   ];

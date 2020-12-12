@@ -12,9 +12,16 @@ router.get('/contato', IndexController.viewContato);
 router.get('/confirmarcontato', IndexController.confirmarContato);
 
 router.get('/celulares', (req, res) => {
-  let max = req.query;
-  let lista = celulares.filter((cel) => cel.preco <= max);
-  res.send(lista);
+  let { max } = req.query;
+  if (max != null && max != '') {
+    let lista = celulares.filter((celular) => {
+        return celular.preco <= parseFloat(max);
+    });
+    res.send(lista);  
+  } else {
+    //res.json(celulares);
+    res.send(celulares);
+  }
 });
 
 module.exports = router;

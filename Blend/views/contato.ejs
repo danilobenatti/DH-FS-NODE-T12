@@ -6,11 +6,15 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Olá <%= nomeUsuario %></h1>
+    <h1>Olá <%= nomeUsuario %> sua idade é <%= idadeUsuario %> </h1>
     <form action="/confirmarcontato" method="get">
         <p>
             <label for="nome">Nome:</label>
             <input type="text" name="nome" id="nome">
+        </p>
+        <p>
+            <label for="idade">Idade:</label>
+            <input type="number" name="idade" id="idade">
         </p>
         <p>
             <label for="email">E-Mail:</label>
