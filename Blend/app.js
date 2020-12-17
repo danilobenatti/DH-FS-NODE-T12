@@ -27,6 +27,10 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/produtos', produtosRouter); // <= direciona a URL para a rota
 
+app.use((req, res) => {
+  return res.status(404).render('not-found'); // <= direciona para uma URL de erro, quando 404
+});
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
