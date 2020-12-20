@@ -9,6 +9,7 @@ var methodOverride = require('method-override'); // <= para manipular dados com 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var produtosRouter = require('./routes/produtos'); // <= inclusão de rota para produtos
+var usuariosRouter = require('./routes/usuarios'); // <= inclusão de rota para usuarios
 
 var app = express(); // <= importante
 
@@ -26,6 +27,7 @@ app.use(methodOverride('_method')); // <= sobrescrever a URL
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/produtos', produtosRouter); // <= direciona a URL para a rota
+app.use('/usuarios', usuariosRouter); // <= direciona a URL para a rota
 
 app.use((req, res) => {
   return res.status(404).render('not-found'); // <= direciona para uma URL de erro, quando 404
