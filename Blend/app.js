@@ -10,6 +10,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var produtosRouter = require('./routes/produtos'); // <= inclusão de rota para produtos
 var usuariosRouter = require('./routes/usuarios'); // <= inclusão de rota para usuarios
+var logMiddleware = require('./middlewares/logSite'); // <= inclusão de rota para middleware
 
 var app = express(); // <= importante
 
@@ -23,6 +24,8 @@ app.use(express.urlencoded({ extended: false })); // <= importante
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method')); // <= sobrescrever a URL
+// todos os app.use acima são considerado middlewares.
+app.use(logMiddleware); // <= executado antes da rotas seguintes
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
