@@ -43,3 +43,7 @@ O usuário entrou na url: /usuarios/criar
 O usuário entrou na url: /usuarios/criar
 O usuário entrou na url: /usuarios/criar
 O usuário entrou na url: /usuarios/criar
+O usuário entrou na url: /
+O usuário entrou na url: /favicon.ico
+O usuário entrou na url: /usuarios/criar
+O usuário entrou na url: /usuarios/criar
