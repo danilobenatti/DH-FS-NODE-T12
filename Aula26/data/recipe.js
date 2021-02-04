@@ -1,0 +1,1 @@
+module.exports = [{"id":1,"nome":"Murilo 123","email":"murilo_das_receitas@gmail.com","mensagem":"Tenho uma receita de uma macarronada deliciosa, só comprar macarrão e colocar no microondas por 15 minutos"}]
