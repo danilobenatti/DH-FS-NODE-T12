@@ -1,1 +1,6 @@
-{"nome":"Danilo","email":"danilonb@email.com","senha":"$2b$10$NXstkJjwpKtm01k3Zybw4uJFlX6qKChqTD97eemefe7rhFE.lcGHO","imagem":"atencao-teste.jpg"}
+{
+    "nome": "Danilo",
+    "email": "danilonb@email.com",
+    "senha": "$2b$10$NXstkJjwpKtm01k3Zybw4uJFlX6qKChqTD97eemefe7rhFE.lcGHO",
+    "imagem": "atencao-teste.jpg"
+}

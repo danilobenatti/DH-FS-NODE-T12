@@ -42,7 +42,7 @@ let UsuarioController = {
         res.render('login');
     },
     logarUsuario: (req, res) => { // <= POST
-        let { email, senha } = req.body;
+        let { email, senha, logado } = req.body;
         let usuarioSalvo = fs.readFileSync(usuarioJson, {encoding: 'utf-8'});
         usuarioSalvo = JSON.parse(usuarioSalvo); // <= converte para String.
         if (email != usuarioSalvo.email) {
@@ -51,6 +51,13 @@ let UsuarioController = {
         if (!bcrypt.compareSync(senha, usuarioSalvo.senha)) {
             return res.send('Senha Inválida!');
         }
+
+        req.session.usuario = usuarioSalvo;
+
+        if (logado != undefined) {
+            res.cookie('logado', usuarioSalvo.email, { maxAge:600000 });
+        }
+
         res.redirect('/produtos');
     }
 }

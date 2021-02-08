@@ -5,12 +5,14 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 // npm install method-override --save
 var methodOverride = require('method-override'); // <= para manipular dados com PUT e DELETE.
+var session = require('express-session');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var produtosRouter = require('./routes/produtos'); // <= inclusão de rota para produtos
 var usuariosRouter = require('./routes/usuarios'); // <= inclusão de rota para usuarios
 var logMiddleware = require('./middlewares/logSite'); // <= inclusão de rota para middleware
+var cookieMiddleware = require('./middlewares/cookieLogin');
 
 var app = express(); // <= importante
 
@@ -18,6 +20,11 @@ var app = express(); // <= importante
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+app.use(session({
+  secret:'projetoExpress',
+  saveUninitialized: true,
+  resave: true
+}));
 app.use(logger('dev'));
 app.use(express.json()); // <= importante, transforma em obj JSON se necessário
 app.use(express.urlencoded({ extended: false })); // <= importante
@@ -25,6 +32,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method')); // <= sobrescrever a URL
 // todos os app.use acima são considerado middlewares.
+app.use(cookieMiddleware);
 app.use(logMiddleware); // <= executado antes da rotas seguintes
 
 app.use('/', indexRouter);

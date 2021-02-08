@@ -23,7 +23,7 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage })
 /** FIM do trecho de código para multer */
 
-const usuarioController = require('../controllers/usuarioController');
+const usuarioController = require('../controllers/UsuarioController');
 
 /* GET users listing */
 router.get('/criar', usuarioController.registroForm);

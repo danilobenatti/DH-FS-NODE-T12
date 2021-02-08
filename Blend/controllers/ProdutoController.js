@@ -58,7 +58,7 @@ let ProdutoController = {
          * renderiza a página "listaProdutos.ejs".
          * passando a lista de objetos "listaProdutos".
          */
-        res.render('listaProdutos', { listaProdutos: produtos });
+        res.render('listaProdutos', { listaProdutos: produtos, usuario: req.session.usuario });
     },
     deletar: (req, res) => {
         let { id } = req.params;
